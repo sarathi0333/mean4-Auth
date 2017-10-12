@@ -1,0 +1,13 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<h1>This is auth app</h1>
+<div class="container">
+  <div class="btn">hello</div>
+  <ul class="nav navbar-nav navbar-right">
+    <li *ngIf="!userService.isLoggedIn()"><a [routerLink]="['/login']">Login</a></li>
+    <li *ngIf="userService.isLoggedIn()">
+      <a href="#" (click) = "onLogOutClicked()">Logout</a>
+    </li>
+    <li *ngIf="!userService.isLoggedIn()"><a [routerLink]="['/register']">Register</a></li>
+  </ul>
+  <router-outlet></router-outlet>
+</div>
